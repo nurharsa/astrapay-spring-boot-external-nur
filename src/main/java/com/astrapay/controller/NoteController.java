@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.astrapay.dto.NoteRequestDto;
 import com.astrapay.dto.NoteResponseDto;
-import com.astrapay.dto.PagedResponse;
+import com.astrapay.dto.PagedResponseDto;
 import com.astrapay.entity.Note;
 import com.astrapay.service.NoteService;
 
@@ -38,7 +38,7 @@ public class NoteController {
 
     @ApiOperation(value = "Get all notes")
     @GetMapping
-    public ResponseEntity<PagedResponse<NoteResponseDto>> getNotes(Pageable pageable){
+    public ResponseEntity<PagedResponseDto<NoteResponseDto>> getNotes(Pageable pageable){
         return ResponseEntity.ok(noteService.getAllNotes(pageable));
     }
 

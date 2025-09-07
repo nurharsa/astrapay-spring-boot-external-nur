@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 import com.astrapay.dto.NoteRequestDto;
 import com.astrapay.dto.NoteResponseDto;
-import com.astrapay.dto.PagedResponse;
+import com.astrapay.dto.PagedResponseDto;
 import com.astrapay.entity.Note;
 import com.astrapay.repository.NoteRepository;
 
@@ -22,7 +22,7 @@ import lombok.AllArgsConstructor;
 public class NoteService {
     private final NoteRepository noteRepository;
 
-    public PagedResponse<NoteResponseDto> getAllNotes(Pageable pageable) {
+    public PagedResponseDto<NoteResponseDto> getAllNotes(Pageable pageable) {
         List<Note> notes = noteRepository.findAll();
 
         int pageSize = pageable.getPageSize();
@@ -44,7 +44,7 @@ public class NoteService {
 
         int totalPages = (int) Math.ceil((double) notes.size()/ pageSize);
 
-        return new PagedResponse<>(
+        return new PagedResponseDto<>(
             currentPage,
             totalPages,
             notes.size(),

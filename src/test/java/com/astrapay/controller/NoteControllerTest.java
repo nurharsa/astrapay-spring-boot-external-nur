@@ -10,7 +10,7 @@ import java.util.Optional;
 
 import com.astrapay.dto.NoteRequestDto;
 import com.astrapay.dto.NoteResponseDto;
-import com.astrapay.dto.PagedResponse;
+import com.astrapay.dto.PagedResponseDto;
 import com.astrapay.entity.Note;
 import com.astrapay.service.NoteService;
 
@@ -50,7 +50,7 @@ public class NoteControllerTest {
 
     @Test
     void testGetAllNotes_success() throws Exception {
-        PagedResponse<NoteResponseDto> pagedResponse = new PagedResponse<>(
+        PagedResponseDto<NoteResponseDto> pagedResponse = new PagedResponseDto<>(
                 0, // currentPage
                 1, // totalPages
                 2, // totalElements

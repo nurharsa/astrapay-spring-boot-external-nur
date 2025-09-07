@@ -11,7 +11,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class PagedResponse<T> {
+public class PagedResponseDto<T> {
     private int currentPage;      
     private int totalPages;  
     private long totalElements;
